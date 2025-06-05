@@ -69,6 +69,11 @@ def http_exception_handler(request: Request, exc: HTTPException):
         },
     )
 
+@app.get("/favicon.ico")
+def favicon():
+    from fastapi.responses import Response
+    return Response(content="", media_type="image/x-icon")
+
 # Arranque
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
