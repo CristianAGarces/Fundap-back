@@ -14,7 +14,7 @@ def send_admin_confirmation_email(to_email: str, token: str):
     confirm_url = f"{FRONTEND_URL}/admin-confirm?token={token}"
 
     subject = "Alerta de inicio de sesión en FUNDAPMACOE"
-    confirm_url = f"{os.getenv('FRONTEND_URL')}/admin-confirm?token={token}"
+    confirm_url = f"{FRONTEND_URL}/admin-confirm?token={token}"
     logo_url = f"{os.getenv('FRONTEND_URL', 'http://localhost:3000')}/Logo.png"
     body = f"""
     <div style='font-family:sans-serif;max-width:500px;margin:auto;background:#fff;border-radius:12px;box-shadow:0 2px 8px #e67e2240;padding:32px 24px;'>
