@@ -79,10 +79,14 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
 
+origins = [
+    "https://fundap-front.netlify.app",  # tu frontend en producción
+    "http://localhost:3000",             # para desarrollo local
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # o ["*"] para desarrollo
+    allow_origins=origins,  # o ["*"] para permitir todos (no recomendado en producción)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
