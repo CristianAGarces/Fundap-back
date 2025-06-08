@@ -27,6 +27,16 @@ pip install -r venv311/requirements.txt
 python main.py
 ```
 
+## Tecnologias usadas
+
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+python-multipart
+supabase
+pydantic[email]
+
 ## Notas
 
 - Asegúrate de tener configuradas las variables de entorno necesarias para la conexión a servicios externos.
