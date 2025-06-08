@@ -10,6 +10,9 @@ def send_admin_confirmation_email(to_email: str, token: str):
     smtp_user = os.getenv("SMTP_USER")
     smtp_password = os.getenv("SMTP_PASSWORD")
 
+    FRONTEND_URL = os.getenv("FRONTEND_URL", "https://fundap-front-production.up.railway.app")
+    confirm_url = f"{FRONTEND_URL}/admin-confirm?token={token}"
+
     subject = "Alerta de inicio de sesión en FUNDAPMACOE"
     confirm_url = f"{os.getenv('FRONTEND_URL', 'http://localhost:3000')}/admin-confirm?token={token}"
     logo_url = f"{os.getenv('FRONTEND_URL', 'http://localhost:3000')}/Logo.png"
